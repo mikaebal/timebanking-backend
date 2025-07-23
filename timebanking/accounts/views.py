@@ -1,8 +1,7 @@
-from django.shortcuts import render
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework import generics
+from .serializers import RegisterSerializer
+from .models import CustomUser
 
-# Create your views here.
-@api_view(['GET'])
-def home(request):
-    return Response({"message": "Hello world!"})
+class RegisterView(generics.CreateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = RegisterSerializer
