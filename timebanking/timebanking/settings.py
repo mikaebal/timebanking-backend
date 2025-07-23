@@ -32,11 +32,19 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+# tell django to use our custom user model
+AUTH_USER_MODEL = 'accounts.User'
+
+
+# add rest framework and token auth
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'rest_framework',
+    'rest_framework.authtoken',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "accounts",
@@ -132,5 +140,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
-    ]
+    ],
+    # add token authentication so users can log in and receive auth tokens
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }
