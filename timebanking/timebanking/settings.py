@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-773qsv!bv!upj81r%hn)-qng(pxzj*&a_0k1z^vaklw4t#+x-c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['timebanking-backend.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
