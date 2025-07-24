@@ -19,3 +19,22 @@ class RegisterSerializer(serializers.ModelSerializer):
         validated_data.pop('password2')
         user = User.objects.create_user(**validated_data)
         return user
+
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'email',
+            'bio',
+            'skills',
+            'interests',
+            'city',
+            'state',
+            'zip_code',
+            'time_credits',
+            'first_name',
+            'last_name',
+        )
+        read_only_fields = ('username', 'email', 'time_credits')
