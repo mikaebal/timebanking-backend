@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['timebanking-backend.onrender.com', 'localhost', '127.0.0.1']
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Your local frontend
     "http://localhost:3000",  # Alternative local port
-    "https://timebanking-frontend.onrender.com/" # Add your deployed frontend URL 
+    "https://timebanking-frontend.onrender.com" # Add your deployed frontend URL 
 ]
 # Application definition
 
