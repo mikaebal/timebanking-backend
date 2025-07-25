@@ -30,7 +30,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['timebanking-backend.onrender.com', 'localhost', '127.0.0.1']
 
-
+# Add CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Your local frontend
+    "http://localhost:3000",  # Alternative local port
+    # Add your deployed frontend URL here when you deploy
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,6 +48,7 @@ INSTALLED_APPS = [
     "accounts",
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders', 
 ]
 
 MIDDLEWARE = [
@@ -54,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'timebanking.urls'
